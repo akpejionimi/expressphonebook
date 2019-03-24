@@ -1,4 +1,5 @@
 extends layout/mainLayout.pug
+
 block content
     h1 PhoneBook
     div
@@ -7,3 +8,5 @@ block content
                 p Name: #{contact.name}
                 p Phone: #{contact.phone}
                 p Email: #{contact.email}
+                a(href="/edit/" +contact.id) edit
+                a(href="/delete/" +contact.id) delete

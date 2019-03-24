@@ -26,7 +26,7 @@ class Contact {
         return db.execute("DELETE FROM contact WHERE id=?", [id])
     }
 
-    static updatebyId(name,phone,email,id) {
+    static editbyId(name,phone,email,id) {
         return db.execute("UPDATE contact SET name =?,phone=?,email=? WHERE id=?",[name,phone,email,id] )
     }
 

@@ -29,22 +29,33 @@ exports.gethomeContact = (req,res,next) =>{
     .catch(err => next(err));
 }
 
-exports.editPhone = (req, res, next) => {
+exports.deleteContact = (req, res, next) => {
     const contactId = req.params.id;
-    Contacts.getById(contactId)
-        .then(([rows, fields]) => {
-            res.render("edit_phonebook", 
-            {pageTitle: "Edit Phonebook", 
-            path: req.path, details: rows[0]});
-        })
-        .catch(err => next(err));
-
-}
-exports.deletebyId = (req, res, next) => {
-    const contactId = req.params.id;
-    Contacts.deletebyId(contactId)
+    Contact.deletebyId(contactId)
         .then(() => {
             res.redirect("/");
         })
         .catch(err => next(err));
 } 
+
+exports.updateContact = (req, res, next) => {
+    const contactId = req.params.id;
+    Contact.getById(contactId)
+        .then(([rows, fields]) => {
+            res.render("edit_contact", 
+            {pageTitle: "edit-contact", 
+            path: req.path, output: rows[0]});
+        })
+        .catch(err => next(err));
+
+}
+exports.editContact = (req, res, next) => {
+    Contact.editbyId(req.body.name,
+        req.body.phone,
+        req.body.email,
+        req.params.id)
+        .then(() => {
+            res.redirect("/");
+        })
+        .catch((err) => next(err));
+}

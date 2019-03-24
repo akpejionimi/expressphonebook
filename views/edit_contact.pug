@@ -1,0 +1,12 @@
+extends layout/mainLayout.pug
+block content
+    div
+        h3 Edit Contact Details
+        form(action=`/edit/${output.id}` method="POST")
+            label(for="name") Name:
+                input(type="text" name="name" value= output.name)
+            label(for="phone") Phone:
+                input(type="number", name="phone" value = output.phone )
+            label(for="email") Email:
+                input(type="text" name="email" value = output.email) 
+            button(type="submit") update
