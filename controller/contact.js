@@ -38,7 +38,7 @@ exports.deleteContact = (req, res, next) => {
         .catch(err => next(err));
 } 
 
-exports.updateContact = (req, res, next) => {
+exports.editContact = (req, res, next) => {
     const contactId = req.params.id;
     Contact.getById(contactId)
         .then(([rows, fields]) => {
@@ -49,7 +49,7 @@ exports.updateContact = (req, res, next) => {
         .catch(err => next(err));
 
 }
-exports.editContact = (req, res, next) => {
+exports.updateContact = (req, res, next) => {
     Contact.editbyId(req.body.name,
         req.body.phone,
         req.body.email,

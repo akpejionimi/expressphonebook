@@ -9,6 +9,6 @@ html(lang="en")
         title #{pageTitle}
     body
         nav.navbar.navbar-expand-lg.navbar-light.bg-light
-           a.nav-link-active(href="/" class= path==="/"? "active": "" ) Phonebook
-           a.nav-link.active(href="/add" class=path==="/add" ? "active": "") Add contact
+           a.nav-link(href="/" class= path==="/"? "active": "" ) Phonebook
+           a.nav-link(href="/add" class=path==="/add" ? "active": "") Add contact
         block content
