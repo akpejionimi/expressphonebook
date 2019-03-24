@@ -1,0 +1,14 @@
+extends layout/mainLayout.pug
+block content
+    form(action="/create" method="POST")
+        label(for="Name") Name:
+            input(type="text" id="name" name="name")
+
+        label(for="Name") Phone No.:
+            input(type="number" id="phone" name="phone")
+
+        label(for="Name") Email:
+            input(type="email" id="name" name="email")
+            
+          
+            input(type="submit" value="Save") 

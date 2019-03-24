@@ -1,0 +1,21 @@
+require('dotenv').config();
+
+const express = require ('express');
+const bodyParser = require("body-parser"); 
+
+const addRoute = require ("./routes/add");
+const homeRoute = require ("./routes/home");
+
+const app = express();
+app.set("view engine", "pug");
+app.use(bodyParser.urlencoded({ extended: false }))
+
+app.use(addRoute.router);
+app.use(homeRoute);
+
+
+app.use((req, res, next) => {
+ res.status(404).send("<h1>Not Found</h1>")
+});
+ 
+app.listen(3000, ()=> console.log("listening at port 3000"));

@@ -1,0 +1,9 @@
+extends layout/mainLayout.pug
+block content
+    h1 PhoneBook
+    div
+        each contact in allContacts
+            div
+                p Name: #{contact.name}
+                p Phone: #{contact.phone}
+                p Email: #{contact.email}
