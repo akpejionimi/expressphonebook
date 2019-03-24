@@ -3,10 +3,13 @@ block content
     div
         h3 Edit Contact Details
         form(action=`/edit/${output.id}` method="POST")
-            label(for="name") Name:
-                input(type="text" name="name" value= output.name)
-            label(for="phone") Phone:
-                input(type="number", name="phone" value = output.phone )
-            label(for="email") Email:
-                input(type="text" name="email" value = output.email) 
-            button(type="submit") update
+            div.form-group
+                label(for="name") Name:
+                    input.form-control(type="text" name="name" value= output.name)
+            div.form-group
+                label(for="phone") Phone:
+                    input.form-control(type="number", name="phone" value = output.phone )
+            div.form-group
+                label(for="email") Email:
+                    input.form-control(type="text" name="email" value = output.email) 
+            button.btn.btn-primary(type="submit") update

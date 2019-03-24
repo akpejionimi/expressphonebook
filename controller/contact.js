@@ -3,7 +3,7 @@ const Contact = require("../models/contact");
 
 exports.getContact = (req, res, next) => {
     res.render("add",
-     { pageTitle: "contact", 
+     { pageTitle: "Add contact", 
      path: req.path });
 }
 
