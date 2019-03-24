@@ -1,14 +1,15 @@
 extends layout/mainLayout.pug
 block content
     form(action="/create" method="POST")
-        label(for="Name") Name:
-            input(type="text" id="name" name="name")
-
-        label(for="Name") Phone No.:
-            input(type="number" id="phone" name="phone")
-
-        label(for="Name") Email:
-            input(type="email" id="name" name="email")
+        div.form-group
+            label(for="Name") Name:
+                input.form-control.form-text.text-muted(type="text" id="name" name="name" placeholder="Enter Name")
+        div.form-group
+            label(for="Name") Phone No.:
+                input.form-control.form-text.text-muted(type="number" id="phone" name="phone" placeholder="Enter Phone No")
+        div.form-group
+            label(for="Name") Email:
+                input.form-control.form-text.text-muted(type="email" id="name" name="email" placeholder="Enter Email")
             
           
-            input(type="submit" value="Save") 
+        input.btn.btn-primary(type="submit" value="Save") 

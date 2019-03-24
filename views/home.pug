@@ -4,9 +4,9 @@ block content
     h1 PhoneBook
     div
         each contact in allContacts
-            div
-                p Name: #{contact.name}
-                p Phone: #{contact.phone}
-                p Email: #{contact.email}
+            div(class="card" style="width: 30rem;")
+                h3.list-group-item Name: #{contact.name}
+                h6 Phone: #{contact.phone}
+                h6 Email: #{contact.email}
                 a(href="/edit/" +contact.id) edit
                 a(href="/delete/" +contact.id) delete
