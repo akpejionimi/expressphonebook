@@ -15,7 +15,7 @@ router.get("/edit/:id",contactController.editContact);
 router.get("/delete/:id",contactController.deleteContact);
 
 module.exports = {
-    router,
+    router
     // contacts
 }
 
