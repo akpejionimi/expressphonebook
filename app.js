@@ -17,7 +17,9 @@ app.use(homeRoute);
 
 
 app.use((req, res, next) => {
- res.status(404).send("<h1>Not Found</h1>")
+    res.status(404).send("<h1>Not Found</h1>")
 });
- 
-app.listen(3000, ()=> console.log("listening at port 3000"));
+//Port
+const PORT = process.env.PORT || 5000;
+
+app.listen(PORT, ()=> console.log(`listening at port 3000 ${PORT}`));
