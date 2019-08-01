@@ -50,7 +50,7 @@ exports.editContact = (req, res, next) => {
 
 }
 exports.updateContact = (req, res, next) => {
-    Contact.editbyId(req.body.name,
+    Contact.editbyId(req .body.name,
         req.body.phone,
         req.body.email,
         req.params.id)
